@@ -1,0 +1,68 @@
+.searchBar_main-container{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.searchBar_container{
+    position: relative;
+    width: 50%;
+     
+}
+
+.searchBar_icon{
+    color:black;
+    position: absolute;
+    left: 20px;
+    top:10px;
+    
+
+}
+.searchBar_input{
+width: 80%;
+height: 30px;
+border-radius: 5px;
+padding-left: 50px;
+background: white;
+}
+
+.searchBar_button{
+    position: absolute;
+    height: 25px;
+    right:150px;
+    top:3px;
+    border-radius: 5px;
+    background: transparent;
+    border: none;
+    color:black;
+    font-size: 20px;
+}
+
+.searchBar_span{
+    cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.searchBar_span:after {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    
+  }
+
+  .searchBar_button:hover .searchBar_span {
+    padding-right: 15px;
+    color:red
+  }
+  
+  .searchBar_button:hover .searchBar_span:after {
+    opacity: 1;
+    right: 0;
+  }
