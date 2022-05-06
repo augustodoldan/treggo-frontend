@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
- import { FaSpaceShuttle } from 'react-icons/fa';
- import './SearchBar.css'
- 
-
+import { FaSpaceShuttle } from "react-icons/fa";
+import "./SearchBar.css";
 
 const SearchBar = ({ addCharacters, characters }) => {
   const [valueInput, setValueInput] = useState("");
@@ -12,18 +10,19 @@ const SearchBar = ({ addCharacters, characters }) => {
     return setValueInput(value);
   };
 
-  const searchCharacter = async() => {
-      
-      const response = await fetch(`http://localhost:3001/v1/characters/${valueInput}`, {
+  const searchCharacter = async () => {
+    const response = await fetch(
+      `http://localhost:3001/v1/characters/${valueInput}`,
+      {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json",
+          Accept: "application/json",
         },
-      });
-      const data = await response.json();
-       addCharacters(data)
-
+      }
+    );
+    const data = await response.json();
+    addCharacters(data);
   };
 
   const handlerKeyUp = (e) => {
@@ -32,20 +31,31 @@ const SearchBar = ({ addCharacters, characters }) => {
     }
   };
 
-  useEffect(()=>{
-    searchCharacter()},[])
+  useEffect(() => {
+    searchCharacter();
+  }, []);
 
   return (
     <div className="searchBar_main-container">
-    <div className="searchBar_container">
-      <input className="searchBar_input" type="text" onChange={handleChange} value={valueInput} onKeyUp={handlerKeyUp}/>
-      <FaSpaceShuttle className="searchBar_icon"/>
-      <button className="searchBar_button" type="submit"  onClick={searchCharacter}>
-        <span className="searchBar_span">Buscar</span>
-      </button>
+      <div className="searchBar_container">
+        <input
+          className="searchBar_input"
+          type="text"
+          onChange={handleChange}
+          value={valueInput}
+          onKeyUp={handlerKeyUp}
+        />
+        <FaSpaceShuttle className="searchBar_icon" />
+        <button
+          className="searchBar_button"
+          type="submit"
+          onClick={searchCharacter}
+        >
+          <span className="searchBar_span">Buscar</span>
+        </button>
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;

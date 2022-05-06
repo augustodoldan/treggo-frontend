@@ -4,6 +4,7 @@ import Home from '../src/pages/Home'
 import CharacterDetail from '../src/pages/CharacterDetail'
 import Planet from '../src/pages/Planet'
 import Film from '../src/pages/Film'
+import Login from '../src/pages/Login'
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/characters/:id" element={<CharacterDetail />} />
         <Route path="/planet/:id" element={<Planet />} />
         <Route path="/film/:id" element={<Film />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );

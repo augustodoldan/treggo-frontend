@@ -8,7 +8,7 @@ const Card = ({ name, id }) => {
   return (
     <div id="card">
       <h1 className="card_title">{name }</h1>
-      <Link to={`/characters/${id}`}> <button>Ver personaje</button> </Link>
+      <Link to={`/characters/${id}`} > <button className="card_button">Ver personaje</button> </Link>
     </div>
   );
 };

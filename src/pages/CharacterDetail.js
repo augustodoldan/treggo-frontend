@@ -72,9 +72,11 @@ const CharacterDetail = () => {
   console.log(films);
   return (
     <div id="character_detail">
-      <h1>{character && character.properties.name} </h1>
+      <h1 className="character_detail_character">
+        {character && character.properties.name}{" "}
+      </h1>
       <Link to={`/planet/${planet.uid}`}>
-        <h1>{planet && planet.properties.name}</h1>
+        <h4>{planet && planet.properties.name}</h4>
       </Link>
       <ul>
         {films && films.map((film) => <ListFilm film={film} key={film.uid} />)}

@@ -8,12 +8,12 @@
   margin-bottom: 5%;
   box-shadow: 0 20px 30px rgba(243, 240, 240, 0.2);
   border-radius: 10px;
-  background: white;
+  backdrop-filter: blur(15px);
   transition: background 1s ease-out 0s;
-   hyphens: auto;
- }
+  hyphens: auto;
+}
 
- #card:hover {
+#card:hover {
   background: black;
   color: white;
   box-shadow: 10px 10px 10px rgba(255, 233, 31, 0.384),
@@ -21,27 +21,19 @@
     10px 10px 10px rgba(255, 233, 31, 0.384);
 }
 
-
 #card .card_title {
   font-size: 30px;
   text-align: center;
   font-weight: 600;
   letter-spacing: 3px;
   line-height: 5vh;
-  color: black
+  color: rgb(255, 232, 31);
 }
 
-#card .card_title:hover{
-  color: #b3001b;
-  text-shadow: 0 0 100px #b3001b,
-               0 0 200px #FFF,
-               0 0 3000px #FFF,;
+.card_button{
+  background-color: rgb(255, 232, 31);
+  border: none;
+  height: 25px;
+  width: 152px;
+  border-radius: 10px;
 }
-
-#card .card_description {
-  font-size: 20px;
-}
-#card .card_description::first-letter {
-  font-size: 35px;
-}
-
