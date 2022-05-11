@@ -1,8 +1,17 @@
-.ListFilm_container{
-    color:red;
-    
+.listFilm_container {
+  margin: 0;
+  padding-bottom: 15px;
 }
 
-.ListFilm_container a:visited {
-    color: green;
-  }
+.listFilm_link {
+  text-decoration: none;
+}
+.listFilm_list {
+  list-style: none;
+  font-size: 4vmin;
+  color: black;
+  background-color: rgb(255, 232, 31);
+  display: inline-block;
+  border-radius: 10px;
+  text-decoration: underline;
+}

@@ -69,18 +69,39 @@ const CharacterDetail = () => {
       getFilms();
     }
   }, [character]);
-  console.log(films);
+
   return (
-    <div id="character_detail">
-      <h1 className="character_detail_character">
-        {character && character.properties.name}{" "}
-      </h1>
-      <Link to={`/planet/${planet.uid}`}>
-        <h4>{planet && planet.properties.name}</h4>
-      </Link>
-      <ul>
-        {films && films.map((film) => <ListFilm film={film} key={film.uid} />)}
-      </ul>
+    <div className="characterDetail_container">
+      <div className="characterDetail_data">
+        <div className="characterDetail_name">
+          <h1 className="characterDetail_character-title">
+            {character && character.properties.name}
+          </h1>
+        </div>
+        <div className="characterDetail_planet">
+          <div>
+
+          <h3 className="characterDetail_planet-text">Planeta de origen </h3>
+          </div>
+          <Link
+            to={`/planet/${planet.uid}`}
+            className="characterDetail_planet-link"
+          >
+            <p className="characterDetail_planet-name">
+              {planet && planet.properties.name}
+            </p>
+          </Link>
+        </div>
+        <div className="characterDetail_films">
+          <ul>
+            <h4 className="characterDetail_films-list-title">
+              Peliculas donde aparece
+            </h4>
+            {films &&
+              films.map((film) => <ListFilm film={film} key={film.uid} />)}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

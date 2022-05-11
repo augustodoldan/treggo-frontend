@@ -10,20 +10,23 @@ const Film = () => {
   const [characters, setCharacters] = useState([]);
 
   const getFilms = async () => {
-    const response = await fetch(`http://localhost:3001/v1/film/${id}/characters`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    const response = await fetch(
+      `http://localhost:3001/v1/film/${id}/characters`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
     const data = await response.json();
 
     setFilm(data);
   };
 
   const getCharacterById = async (characterInTheFilm) => {
-     const response = await fetch(
+    const response = await fetch(
       `http://localhost:3001/v1/characters/id/${characterInTheFilm}`,
       {
         method: "GET",
@@ -34,22 +37,17 @@ const Film = () => {
       }
     );
     const data = await response.json();
-     setCharacters([...characters, data]); 
-    };
-    
-    
-    const getCharactersFilm = () => {
-        film.properties.characters.slice(0, 1).forEach((character) => {
-            const idCharacter = character.split("/");
-            const characterInTheFilm = idCharacter[5];
-            
+    setCharacters((prevState) => [...prevState, data]);
+  };
+
+  const getCharactersFilm = () => {
+    film.properties.characters.forEach((character) => {
+      const idCharacter = character.split("/");
+      const characterInTheFilm = idCharacter[5];
+
       getCharacterById(characterInTheFilm);
     });
   };
-
-
-
-
 
   useEffect(() => {
     if (film) {
@@ -60,13 +58,24 @@ const Film = () => {
   useEffect(() => {
     getFilms();
   }, []);
+
   return (
-    <div id="film_container">
-      {film && <h1>{film.properties.title}</h1>}
-      {characters &&
-        characters.map(character => 
-          <Card name={character.properties.name} key={character.uid} id={character.uid} />
-        )}
+    <div className="film_container">
+      <div className="film_data">
+        <div className="film_wrap-title">
+        {film && <h1 className="film_title">{film.properties.title}</h1>}
+        </div>
+        <div className="film_cards"> 
+        {characters &&
+          characters.map((character) => (
+            <Card
+              name={character.properties.name}
+              key={character.uid}
+              id={character.uid}
+              />
+          ))}
+              </div>
+      </div>
     </div>
   );
 };

@@ -7,10 +7,9 @@ const Home = () => {
   const [characters, setCharacters] = useState([]);
 
   return (
-    <div id="home">
-
+    <div id="home_container">
       <div className="home__searchBar">
-      <SearchBar addCharacters={setCharacters} characters={characters} />
+        <SearchBar addCharacters={setCharacters} characters={characters} />
       </div>
       <div className="card-container">
         {characters.map((character) => (

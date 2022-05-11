@@ -1,40 +1,35 @@
-.login {
+.singUp_container {
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-items: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  margin-top: -70px;
+  align-items: flex-start;
+  margin-top: 2%;
 }
-.login_container {
+
+.singUp_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   width: 70%;
-  height: 60%;
-  padding: 20px;
+  height: 85%;
+  padding-top: 20px;
   margin: 0 auto;
   border: 2px solid lightgray;
   border-radius: 10px;
   backdrop-filter: blur(17px);
 }
 
-.login_form {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.formTitle {
+.SingUp_Title {
   color: rgb(255, 232, 31);
   font-weight: bold;
   font-size: 6vmin;
   letter-spacing: 10px;
 }
-
-.login_input {
-  height: 15%;
+.singUp_input {
+  height: 12%;
   width: 90%;
   border: none;
   border: 1px solid lightgray;
@@ -43,15 +38,16 @@
   letter-spacing: 5px;
 }
 
-.login_input:focus {
+.singUp_input {
   outline: none;
 }
-.login_input::-webkit-input-placeholder {
+
+.singUp_input::-webkit-input-placeholder {
   text-align: center;
   line-height: 100px;
 }
 
-.login_submitButton {
+.singUp_Button {
   height: 15%;
   width: 90%;
   padding: 10px;
@@ -65,30 +61,21 @@
   font-size: 4vmin;
   letter-spacing: 10px;
 }
-.login_createAccount {
-  font-size: 4vmin;
-  letter-spacing: 5px;
-  background-color: rgb(255, 232, 31);
-  height: 10%;
-}
-.login_createAccount-link {
-  color: black;
-  font-weight: bolder;
-  text-decoration: none;
+
+.SingUp_error {
+  font-size: 3vmin;
+  color: red;
 }
 
 @media screen and (max-width: 800px) {
-  .login_container {
+  .singUp_form {
     width: 90%;
     height: 80vh;
     margin-top: 30px;
     background: black;
   }
-  .login_submitButton {
+  .singUp_Button {
     background: rgb(255, 232, 31);
     color: black;
-  }
-  .login_createAccount {
-    letter-spacing: 2px;
   }
 }

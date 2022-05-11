@@ -7,6 +7,7 @@ const SearchBar = ({ addCharacters, characters }) => {
 
   const handleChange = (e) => {
     const { value } = e.target;
+
     return setValueInput(value);
   };
 
@@ -36,8 +37,8 @@ const SearchBar = ({ addCharacters, characters }) => {
   }, []);
 
   return (
-    <div className="searchBar_main-container">
-      <div className="searchBar_container">
+    <div className="searchBar_container">
+      <div className="searchBar_controls">
         <input
           className="searchBar_input"
           type="text"

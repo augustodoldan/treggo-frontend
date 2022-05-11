@@ -1,3 +1,26 @@
-#film_container{
-    color:white;
+.film_container{
+    width: 100%;
+}
+.film_data{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.film_cards{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.film_title{
+    color: black;
+    background-color: rgb(255, 232, 31);
+    font-size: 12vmin;
+    display: inline-block;
+    border-radius: 10px;
 }
